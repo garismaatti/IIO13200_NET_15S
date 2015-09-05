@@ -15,14 +15,11 @@
         <SolidColorBrush x:Key="VeikkausRed2" Color="#FFB90A04"/>
     </Window.Resources>
     <Grid>
-        <ListBox x:Name="lbxResult" HorizontalAlignment="Left" Height="300" Margin="252,10,0,0" VerticalAlignment="Top" Width="255">
-            <ListBoxItem Content="ListBoxItem"/>
-            <ListBoxItem Content="ListBoxItem"/>
-        </ListBox>
-        <TextBlock x:Name="txtRows" HorizontalAlignment="Left" Margin="125,153,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="38" TextAlignment="Right" RenderTransformOrigin="0.526,0.125" FontWeight="Bold" Foreground="White"/>
-        <Button x:Name="btnDraw" Content="Arvo" HorizontalAlignment="Left" Height="56" Margin="55,189,0,0" VerticalAlignment="Top" Width="152" Click="btnDraw_Click" Background="{DynamicResource VeikkausRed2}" FontWeight="Bold" Foreground="White"/>
-        <Button x:Name="btnClear" Content="Tyhjennä" HorizontalAlignment="Left" Height="24" Margin="173,286,0,0" VerticalAlignment="Top" Width="61" Click="btnClear_Click" Background="{DynamicResource VeikkausRed2}" FontWeight="Bold" Foreground="White"/>
-        <ComboBox x:Name="cbxGameSelector" HorizontalAlignment="Left" Margin="76,68,0,0" VerticalAlignment="Top" Width="107" SelectionChanged="cbxGameSelector_SelectionChanged" Foreground="Black" BorderBrush="{DynamicResource VeikkausRed2}" Background="{DynamicResource VeikkausRed2}" FontWeight="Bold">
+        <ListBox x:Name="lbxResult" HorizontalAlignment="Left" Height="300" Margin="252,10,0,0" VerticalAlignment="Top" Width="255" FontFamily="Courier New"/>
+        <TextBox x:Name="txtRows" HorizontalAlignment="Left" Margin="125,153,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="38" TextAlignment="Right" RenderTransformOrigin="0.526,0.125" FontWeight="Bold" ToolTip="Arvottavien rivien määrä"/>
+        <Button x:Name="btnDraw" Content="Arvo" HorizontalAlignment="Left" Height="56" Margin="55,189,0,0" VerticalAlignment="Top" Width="152" Click="btnDraw_Click" Background="{DynamicResource VeikkausRed2}" FontWeight="Bold" Foreground="White" ToolTip="Arvo numeroita" Cursor="Hand"/>
+        <Button x:Name="btnClear" Content="Tyhjennä" HorizontalAlignment="Left" Height="24" Margin="173,286,0,0" VerticalAlignment="Top" Width="61" Click="btnClear_Click" Background="{DynamicResource VeikkausRed2}" FontWeight="Bold" Foreground="White" ToolTip="Poista arvotut numerot" Cursor="Hand"/>
+        <ComboBox x:Name="cbxGameSelector" HorizontalAlignment="Left" Margin="76,68,0,0" VerticalAlignment="Top" Width="107" Foreground="Black" BorderBrush="{DynamicResource VeikkausRed2}" Background="{DynamicResource VeikkausRed2}" FontWeight="Bold" ToolTip="Valitse peli" SelectionChanged="cbxGameSelector_SelectionChanged" Cursor="Hand">
             <ComboBoxItem Selector.IsSelected="True"  Content="Suomi" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="VikingLotto" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem Content="Eurojackpot" HorizontalAlignment="Left" Width="118"/>
@@ -30,7 +27,7 @@
         <Label x:Name="lbTittle" Content="Lotto arvontakone" HorizontalAlignment="Left" Margin="24,0,0,0" VerticalAlignment="Top" FontSize="21.333" FontWeight="Bold" Foreground="White"/>
         <Label x:Name="lbRows" Content="Rivejä:" HorizontalAlignment="Left" Margin="76,148,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.105,0.077" FontWeight="Bold" Foreground="White"/>
         <Label x:Name="lbGameSelector" Content="Peli:" HorizontalAlignment="Left" Margin="40,68,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="White"/>
-        <Button x:Name="btnClose" Content="Sulje" HorizontalAlignment="Left" Margin="10,288,0,0" VerticalAlignment="Top" Width="75" ToolTip="Sulje sovellus" Background="{DynamicResource VeikkausRed2}" Foreground="White" FontWeight="Bold" Click="btnClose_Click"/>
+        <Button x:Name="btnClose" Content="Sulje" HorizontalAlignment="Left" Margin="10,288,0,0" VerticalAlignment="Top" Width="75" ToolTip="Sulje sovellus" Background="{DynamicResource VeikkausRed2}" Foreground="White" FontWeight="Bold" Click="btnClose_Click" Cursor="Hand"/>
 
     </Grid>
 </Window>
