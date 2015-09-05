@@ -25,7 +25,7 @@ namespace IIO13200_15S
             InitializeComponent();
         }
 
-        private double isOkay(string syote, TextBox sender)
+        /*private double isOkay(string syote, TextBox sender)
         {
             double luku = 0;
             if (syote.Length > 0 && double.TryParse(syote, out luku))
@@ -38,7 +38,24 @@ namespace IIO13200_15S
                 MessageBox.Show("Tarkista syöte!");
                 return 1;
             }
+        }*/
+
+        private double checkInputBox(TextBox input)
+        {
+            double value = 0;
+            if (Double.TryParse(input.Text, out value))
+            {
+                // is value
+                input.Background = Brushes.White;
+                return value;
+            }
+            else
+            {
+                input.Background = Brushes.Red;
+                return 0;
+            }
         }
+
 
         private void btnCalculate_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -51,48 +68,57 @@ namespace IIO13200_15S
             double WindowsHeight = 1;
             double WindowsWidth = 1;
             double FrameWidth = 1;
+            double WindowsArea = 0;
+            double FrameLength = 0;
+            double FrameArea = 0;
+            double GlassArea = 0;
 
-            txtWindowsWidth.Background = Brushes.White;
-            txtWindowsHeight.Background = Brushes.White;
-            txtWindowsFrameWidth.Background = Brushes.White;
+            txtWindowsArea.Text = "N/A";
+            txtFrameLength.Text = "N/A";
+            txtFrameArea.Text = "N/A";
+            txtGlassArea.Text = "N/A";
 
-            if (Double.TryParse(txtWindowsHeight.Text, out WindowsHeight))
-            {
-                // It was assigned.
-            }
-            else
+            WindowsHeight = checkInputBox(txtWindowsHeight);
+            WindowsWidth = checkInputBox(txtWindowsWidth);
+            FrameWidth = checkInputBox(txtWindowsFrameWidth);
+
+            //check values and other errors
+            if (WindowsHeight < 1)
             {
                 txtWindowsHeight.Background = Brushes.Red;
+                MessageBox.Show("Ikkunan korkeus ei ole sallituissa rajoissa!");
             }
-            if (Double.TryParse(txtWindowsWidth.Text, out WindowsWidth))
-            {
-                // It was assigned.
-            }
-            else
+            else if (WindowsWidth < 1)
             {
                 txtWindowsWidth.Background = Brushes.Red;
-            }
-            if (Double.TryParse(txtWindowsFrameWidth.Text, out FrameWidth))
-            {
-                // It was assigned.
+                MessageBox.Show("Ikkunan leveys ei ole sallituissa rajoissa!");
             }
             else
             {
-                txtWindowsFrameWidth.Background = Brushes.Red;
+                WindowsArea = WindowsHeight * WindowsWidth;
+                FrameLength = WindowsHeight + WindowsHeight + WindowsWidth + WindowsWidth;
+                GlassArea = (WindowsHeight - FrameWidth * 2) * (WindowsWidth - FrameWidth * 2);
+                txtWindowsArea.Text = WindowsArea.ToString();
+                txtFrameLength.Text = FrameLength.ToString();
+                txtGlassArea.Text = GlassArea.ToString();
+
+
+                if (FrameWidth < 1 || FrameWidth >= WindowsWidth / 2 || FrameWidth >= WindowsHeight / 2)
+                {
+                    txtWindowsFrameWidth.Background = Brushes.Red;
+                    MessageBox.Show("Ikkunan reunus ei ole sallituissa rajoissa!");
+                }
+                else
+                {
+                    FrameArea = WindowsArea - GlassArea;
+                    txtFrameArea.Text = FrameArea.ToString();
+                }
+                
             }
 
 
-
-
-
-            double WindowsArea = WindowsHeight * WindowsWidth;
-            double FrameLength = WindowsHeight + WindowsHeight + WindowsWidth + WindowsWidth;
-            double FrameArea = WindowsWidth * FrameWidth + WindowsHeight * FrameWidth;
-
-
-            txtWindowsArea.Text = WindowsArea.ToString();
-            txtFrameLength.Text = FrameLength.ToString();
-            txtFrameArea.Text = FrameArea.ToString();
+            
+            
         }
     }
 }
