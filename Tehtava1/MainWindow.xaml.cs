@@ -25,21 +25,6 @@ namespace IIO13200_15S
             InitializeComponent();
         }
 
-        /*private double isOkay(string syote, TextBox sender)
-        {
-            double luku = 0;
-            if (syote.Length > 0 && double.TryParse(syote, out luku))
-            {
-                // It was assigned.
-                return luku;
-            }
-            else
-            {
-                MessageBox.Show("Tarkista syöte!");
-                return 1;
-            }
-        }*/
-
         private double checkInputBox(TextBox input)
         {
             double value = 0;
@@ -51,15 +36,10 @@ namespace IIO13200_15S
             }
             else
             {
+                //is a letter or else
                 input.Background = Brushes.Red;
                 return 0;
             }
-        }
-
-
-        private void btnCalculate_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            //sender.Focus();
         }
 
         private void btnCalculate_Click(object sender, RoutedEventArgs e)
@@ -116,9 +96,6 @@ namespace IIO13200_15S
                 
             }
 
-
-            
-            
         }
     }
 }
