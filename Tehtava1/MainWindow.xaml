@@ -5,23 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IIO13200_15S"
         mc:Ignorable="d"
-        Title="Tehtävä 1: K-S Ikkunat Oy" Height="350" Width="620.048" FontSize="18">
+        Title="Tehtävä 1: K-S Ikkunat Oy" Height="350" Width="597.684" FontSize="18">
     <Grid Margin="0,0,30,0">
         <Image x:Name="imgWindows" Margin="25,62,359,83" Source="Image1.png" Stretch="Fill"/>
 
         <TextBox x:Name="txtWindowsWidth" HorizontalAlignment="Left" Height="23" Margin="442,41,0,0" TextWrapping="Wrap" Text="1200" VerticalAlignment="Top" Width="64"/>
         <TextBox x:Name="txtWindowsHeight" HorizontalAlignment="Left" Height="23" Margin="442,69,0,0" TextWrapping="Wrap" Text="900" VerticalAlignment="Top" Width="64"/>
         <TextBox x:Name="txtWindowsFrameWidth" HorizontalAlignment="Left" Height="23" Margin="442,97,0,0" TextWrapping="Wrap" Text="45" VerticalAlignment="Top" Width="64"/>
-        <Button x:Name="btnCalculate" Content="Laske pinta-ala ja piiri" HorizontalAlignment="Left" Margin="339,129,0,0" VerticalAlignment="Top" Width="211" Height="39" Click="btnCalculate_Click"/>
-        <Label x:Name="lbWindowsWidth" Content="Ikunan Leveys (L):" HorizontalAlignment="Left" Margin="275,34,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnCalculate" Content="Laske pinta-ala ja piiri" HorizontalAlignment="Left" Margin="331,137,0,0" VerticalAlignment="Top" Width="211" Height="39" Click="btnCalculate_Click"/>
+        <Label x:Name="lbWindowsWidth" Content="Ikunan Leveys (L):" HorizontalAlignment="Left" Margin="283,34,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbWindowsHeght" Content="Ikkunan Korkeus (H):" HorizontalAlignment="Left" Margin="259,62,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbFrameWidth" Content="Karmipuun leveys (W):" HorizontalAlignment="Left" Margin="250,90,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbArea" Content="Ikkunan pinta-ala:" HorizontalAlignment="Left" Margin="259,181,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbFrameLength" Content="Karmin piiri:" HorizontalAlignment="Left" Margin="290,225,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbFrameWidth" Content="Karmipuun leveys (W):" HorizontalAlignment="Left" Margin="246,90,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbArea" Content="Ikkunan pinta-ala:" HorizontalAlignment="Left" Margin="257,181,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbFrameLength" Content="Karmin piiri:" HorizontalAlignment="Left" Margin="303,225,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbFrameArea" Content="Karmin pinta-ala:" HorizontalAlignment="Left" Margin="263,260,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtWindowsArea" HorizontalAlignment="Left" Height="23" Margin="442,188,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="100"/>
-        <TextBox x:Name="txtFrameLength" HorizontalAlignment="Left" Height="23" Margin="442,232,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="100"/>
-        <TextBox x:Name="txtFrameArea" HorizontalAlignment="Left" Height="23" Margin="442,267,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="txtWindowsArea" HorizontalAlignment="Left" Height="23" Margin="412,188,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="txtFrameLength" HorizontalAlignment="Left" Height="23" Margin="412,232,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="txtFrameArea" HorizontalAlignment="Left" Height="23" Margin="412,267,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="label" Content="mm" HorizontalAlignment="Left" Margin="506,35,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="mm" HorizontalAlignment="Left" Margin="506,63,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy1" Content="mm" HorizontalAlignment="Left" Margin="506,90,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy2" Content="mm²" HorizontalAlignment="Left" Margin="511,182,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy3" Content="mm" HorizontalAlignment="Left" Margin="511,225,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy4" Content="mm²" HorizontalAlignment="Left" Margin="511,261,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
