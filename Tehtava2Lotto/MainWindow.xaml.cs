@@ -68,7 +68,7 @@ namespace Tehtava2Lotto
                 lbxResult.Items.Add(cbxGameSelector.Text); //add game name
             }
             
-            List<string> lista = newGame.drawLottery(cbxGameSelector.SelectedIndex, rws);
+            List<string> lista = newGame.drawLottery(cbxGameSelector.Text, rws);
             for (int j=lista.Count-1; j >= 0; j--)
             {
                 lbxResult.Items.Add( lista.ElementAt(j) );

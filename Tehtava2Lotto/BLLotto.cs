@@ -10,27 +10,25 @@ namespace Tehtävä2___lotto
     class Lotto
     {
         private int SuurinNro = 39;
-        private int PieninNro = 1;
         private int NumeroLkm = 7;
         /*  Tyyppi on
-            0 = Lotto
-            1 = Viikinlotto
+            0 = Suomi
+            1 = VikingLotto
             2 = Eurojackpot
         */
-        private int Tyyppi = 0;
-        private int Riveja = 0;
+        private string Tyyppi = "Suomi";
         private Random rnd1 = new Random();
 
 
-        public List<string> drawLottery(int game, int rws)
+        public List<string> drawLottery(string game, int rws)
         {
             setGameType(game);
-            if (rws > -1) //check validity
+            if (rws < 0) //check validity
             {
-                Riveja = rws;
+                rws = 0;
             }
             List<string> lista = new List<string>();
-            for (int k = 0; k < Riveja; k++)
+            for (int k = 0; k < rws; k++)
             {
                 lista.Add(drawRow());
             }
@@ -43,13 +41,13 @@ namespace Tehtävä2___lotto
             for (int i=0; i < NumeroLkm; i++)
             {
                 int newNum = 0;
-                if (Tyyppi == 2 && i >= 4)//Eurojackpot extra numbers
+                if (Tyyppi == "Eurojackpot" && i >= 4)//Eurojackpot extra numbers
                 {
-                    newNum = randomNumber(PieninNro, 8);
+                    newNum = randomNumber(1, 8);
                 }
                 else
                 {
-                    newNum = randomNumber(PieninNro, SuurinNro);
+                    newNum = randomNumber(1, SuurinNro);
                 }
                 if (newNum < 10)
                 {
@@ -58,7 +56,7 @@ namespace Tehtävä2___lotto
                 str1 += newNum.ToString();
 
                 //separators
-                if (Tyyppi == 2 && i == 4)
+                if (Tyyppi == "Eurojackpot" && i == 4)
                 {
                     str1 += " -- ";
                 }
@@ -83,21 +81,21 @@ namespace Tehtävä2___lotto
 
         //Set game type
         //Return 1 if there were error, otherwise return 0
-        public int setGameType(int type)
+        public int setGameType(string type)
         {
-            if (type == 1)
+            if (type == "VikingLotto")
             {
                 Tyyppi = type;
                 SuurinNro = 48;
                 NumeroLkm = 6;
             }
-            else if (type == 2)
+            else if (type == "Eurojackpot")
             {
                 Tyyppi = type;
                 SuurinNro = 50;
                 NumeroLkm = 7;
             }
-            else if (type == 0)
+            else if (type == "Suomi")
             {
                 Tyyppi = type;
                 SuurinNro = 39;
@@ -106,7 +104,7 @@ namespace Tehtävä2___lotto
             else
             {
                 //There were error, use default values
-                Tyyppi = 0;
+                Tyyppi = "Suomi";
                 SuurinNro = 39;
                 NumeroLkm = 7;
                 return 1;
