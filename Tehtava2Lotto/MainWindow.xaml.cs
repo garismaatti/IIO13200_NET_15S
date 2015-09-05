@@ -39,5 +39,16 @@ namespace Tehtava2Lotto
         {
 
         }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Oletko varma että haluat sulkea ohjelman?\nKaikki tallentamattomat tiedot menetetään!", "Vahvista sulkeminen", MessageBoxButton.YesNo);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                Close();
+            }
+            
+        }
     }
 }
