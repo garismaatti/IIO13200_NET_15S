@@ -7,6 +7,21 @@
         mc:Ignorable="d"
         Title="This can be your lucky Day!" Height="350" Width="525">
     <Grid>
-        
+        <ListBox x:Name="lbxResult" HorizontalAlignment="Left" Height="300" Margin="252,10,0,0" VerticalAlignment="Top" Width="255">
+            <ListBoxItem Content="ListBoxItem"/>
+            <ListBoxItem Content="ListBoxItem"/>
+        </ListBox>
+        <TextBlock x:Name="txtRows" HorizontalAlignment="Left" Margin="125,153,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="38" TextAlignment="Right" RenderTransformOrigin="0.526,0.125"/>
+        <Button x:Name="btnDraw" Content="Arvo" HorizontalAlignment="Left" Height="56" Margin="55,189,0,0" VerticalAlignment="Top" Width="152" Click="btnDraw_Click"/>
+        <Button x:Name="btnClear" Content="Tyhjennä" HorizontalAlignment="Left" Height="24" Margin="173,286,0,0" VerticalAlignment="Top" Width="61" Click="btnClear_Click"/>
+        <ComboBox x:Name="cbxGameSelector" HorizontalAlignment="Left" Margin="76,68,0,0" VerticalAlignment="Top" Width="107" SelectionChanged="cbxGameSelector_SelectionChanged">
+            <ComboBoxItem Selector.IsSelected="True"  Content="Suomi" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="VikingLotto" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="Eurojackpot" HorizontalAlignment="Left" Width="118"/>
+        </ComboBox>
+        <Label x:Name="lbTittle" Content="Lotto arvontakone" HorizontalAlignment="Left" Margin="76,22,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbRows" Content="Rivejä:" HorizontalAlignment="Left" Margin="76,148,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.105,0.077"/>
+        <Label x:Name="lbGameSelector" Content="Peli:" HorizontalAlignment="Left" Margin="40,68,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
