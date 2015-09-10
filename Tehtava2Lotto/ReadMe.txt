@@ -16,3 +16,4 @@ Extra toimintoja:
 - Ohjelma varoittaa tietojen häviämisestä suljettaessa omasta painikkeesta. Tietoja ei tallenneta.
 - Ohjelma automaattisesti valitsee riviarvon tekstin joka generoinnin sekä pelityypin vaihdon jälkeen ja ohjelmaa käynnistäessä. On lisäämässä käyttömukavuutta.
 - Ohjelma rullaa listan viimeiseen riviin automaattisesti. Taaskin käyttäjän mukavuus syistä.
+- Ohjelma listaa numerot järjestyksessä.
