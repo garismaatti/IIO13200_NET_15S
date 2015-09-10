@@ -9,27 +9,27 @@
     <Grid Margin="0,0,30,0">
         <Image x:Name="imgWindows" Margin="25,62,359,83" Source="Image1.png" Stretch="Fill"/>
 
-        <TextBox x:Name="txtWindowsWidth" HorizontalAlignment="Left" Height="23" Margin="442,41,0,0" TextWrapping="Wrap" Text="1200" VerticalAlignment="Top" Width="64"/>
-        <TextBox x:Name="txtWindowsHeight" HorizontalAlignment="Left" Height="23" Margin="442,69,0,0" TextWrapping="Wrap" Text="900" VerticalAlignment="Top" Width="64"/>
-        <TextBox x:Name="txtWindowsFrameWidth" HorizontalAlignment="Left" Height="23" Margin="442,97,0,0" TextWrapping="Wrap" Text="45" VerticalAlignment="Top" Width="64"/>
+        <TextBox x:Name="txtWindowsWidth" HorizontalAlignment="Left" Height="23" Margin="442,41,0,0" TextWrapping="Wrap" Text="1200" VerticalAlignment="Top" Width="64" FontSize="16"/>
+        <TextBox x:Name="txtWindowsHeight" HorizontalAlignment="Left" Height="23" Margin="442,69,0,0" TextWrapping="Wrap" Text="900" VerticalAlignment="Top" Width="64" FontSize="16"/>
+        <TextBox x:Name="txtWindowsFrameWidth" HorizontalAlignment="Left" Height="23" Margin="442,97,0,0" TextWrapping="Wrap" Text="45" VerticalAlignment="Top" Width="64" FontSize="16"/>
         <Button x:Name="btnCalculate" Content="Laske pinta-ala ja piiri" HorizontalAlignment="Left" Margin="331,134,0,0" VerticalAlignment="Top" Width="211" Height="39" Click="btnCalculate_Click"/>
         <Label x:Name="lbWindowsWidth" Content="Ikunan Leveys (L):" HorizontalAlignment="Left" Margin="283,34,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbWindowsHeight" Content="Ikkunan Korkeus (H):" HorizontalAlignment="Left" Margin="259,62,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbFrameWidth" Content="Karmipuun leveys (W):" HorizontalAlignment="Left" Margin="246,90,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbArea" Content="Ikkunan pinta-ala:" HorizontalAlignment="Left" Margin="255,176,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbFrameArea" Content="Karmin pinta-ala:" HorizontalAlignment="Left" Margin="263,233,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtWindowsArea" HorizontalAlignment="Left" Height="23" Margin="412,183,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
-        <TextBox x:Name="txtFrameArea" HorizontalAlignment="Left" Height="23" Margin="412,240,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
+        <TextBox x:Name="txtWindowsArea" HorizontalAlignment="Left" Height="23" Margin="412,183,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="100" IsEnabled="False" FontSize="16"/>
+        <TextBox x:Name="txtFrameArea" HorizontalAlignment="Left" Height="23" Margin="412,240,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="100" IsEnabled="False" FontSize="16"/>
         <Label x:Name="lbWindowsWidthUnit" Content="mm" HorizontalAlignment="Left" Margin="506,35,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbWindowsHeightUnit" Content="mm" HorizontalAlignment="Left" Margin="506,63,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbFrameWidthUnit" Content="mm" HorizontalAlignment="Left" Margin="506,90,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbWindowsAreaUnit" Content="mm²" HorizontalAlignment="Left" Margin="511,177,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbFrameAreaUnit" Content="mm²" HorizontalAlignment="Left" Margin="511,234,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbGlassArea" Content="Lasin pinta-ala:" HorizontalAlignment="Left" Margin="277,204,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtGlassArea" HorizontalAlignment="Left" Height="23" Margin="412,211,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
+        <TextBox x:Name="txtGlassArea" HorizontalAlignment="Left" Height="23" Margin="412,211,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="100" IsEnabled="False" FontSize="16"/>
         <Label x:Name="lbGlassAreaUnit" Content="mm²" HorizontalAlignment="Left" Margin="511,205,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbFrameLength" Content="Karmin piiri:" HorizontalAlignment="Left" Margin="303,266,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtFrameLength" HorizontalAlignment="Left" Height="23" Margin="412,273,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="100" IsEnabled="False"/>
+        <TextBox x:Name="txtFrameLength" HorizontalAlignment="Left" Height="23" Margin="412,273,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="100" IsEnabled="False" FontSize="16"/>
         <Label x:Name="lbFrameLengthUnit" Content="mm" HorizontalAlignment="Left" Margin="511,266,0,0" VerticalAlignment="Top"/>
 
     </Grid>
