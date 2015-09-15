@@ -18,7 +18,7 @@
         <Label x:Name="lbTransferPrice" Content="Siirtohinta" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnRemovePlayer" Content="Poista pelaaja" HorizontalAlignment="Left" Height="24" Margin="275,74,0,0" VerticalAlignment="Top" Width="127" Click="btnRemovePlayer_Click"/>
         <Label x:Name="lbTeam" Content="Seura" HorizontalAlignment="Left" Margin="10,106,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnWritePlayers" Content="Kirjoita pelaajat" HorizontalAlignment="Left" Height="24" Margin="275,108,0,0" VerticalAlignment="Top" Width="127"/>
+        <Button x:Name="btnWritePlayers" Content="Kirjoita pelaajat" HorizontalAlignment="Left" Height="24" Margin="275,108,0,0" VerticalAlignment="Top" Width="127" Click="btnWritePlayers_Click"/>
         <Button x:Name="btnClose" Content="Lopetus" HorizontalAlignment="Left" Height="24" Margin="275,141,0,0" VerticalAlignment="Top" Width="127" Click="btnClose_Click"/>
         <ComboBox x:Name="cbTeam" HorizontalAlignment="Left" Margin="131,108,0,0" VerticalAlignment="Top" Width="139" Height="24" SelectionChanged="cbTeam_SelectionChanged"/>
         <Label x:Name="lbStatusBar" Content="Ohjelma käynnistetty" HorizontalAlignment="Left" Margin="10,226,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.862,-0.044" Width="392"/>

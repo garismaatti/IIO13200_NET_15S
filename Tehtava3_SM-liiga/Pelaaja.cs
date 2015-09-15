@@ -120,15 +120,27 @@ namespace Tehtava3_SM_liiga
         }
 
 
-        public void AddPlayer(string n_firstName, string n_lastName, string n_team, float n_price)
+        public bool AddPlayer(string n_firstName, string n_lastName, string n_team, float n_price)
         {
             Pelaaja n_player = new Pelaaja();
-
             n_player.Etunimi = n_firstName;
             n_player.Sukunimi = n_lastName;
             n_player.Seura = n_team;
             n_player.Siirtohinta = n_price;
+
+            Pelaaja old_player = new Pelaaja();
+            for (int x = 0; x < team.Count; x++)
+            {
+                old_player = team.ElementAt(x);
+                if (old_player.KokoNimi == n_player.KokoNimi)
+                {
+                    //Same name player found! exit
+                    return true;
+                }
+            }
+            //no same name player found, add player to database
             team.Add(n_player);
+            return false;
         }
 
         public void RemovePlayer(int index)

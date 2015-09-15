@@ -131,10 +131,21 @@ namespace Tehtava3_SM_liiga
         public void UpdatePlayerInfo()
         {
             int i = GetSelectedPlayer();
-            Pelaaja a = NHL.ElementAt(GetSelectedTeam()).GetPlayers().ElementAt(i);
-            txtFirstName.Text = a.Etunimi;
-            txtLastName.Text = a.Sukunimi;
-            txtTransferPrice.Text = a.Siirtohinta.ToString();
+            //check if within limits
+            if (i >= 0 && i < NHL.ElementAt(GetSelectedTeam()).GetPlayers().Count)
+            {
+                Pelaaja a = NHL.ElementAt(GetSelectedTeam()).GetPlayers().ElementAt(i);
+                txtFirstName.Text = a.Etunimi;
+                txtLastName.Text = a.Sukunimi;
+                txtTransferPrice.Text = a.Siirtohinta.ToString();
+            }
+            else
+            {
+                txtFirstName.Text = "";
+                txtLastName.Text = "";
+                txtTransferPrice.Text = "";
+            }
+            
         }
 
 
@@ -170,15 +181,26 @@ namespace Tehtava3_SM_liiga
             {
                 // is value
                 txtTransferPrice.Background = Brushes.White;
+
+                if (seura.AddPlayer(f, l, seura.SeuraNimi, p))
+                {
+                    lbStatusBar.Content = "Pelaajaa ei lisätty! Pelaaja '" + f + " " + l + ", " + seura.SeuraNimi + "' on jo tietokannassa!";
+                }
+                else
+                {
+                    lbStatusBar.Content = "Pelaaja '" + f + " " + l + ", " + seura.SeuraNimi + "' lisätty!";
+                }
+                UpdateListView();
+                lstPelaajat.SelectedIndex = lstPelaajat.Items.Count - 1;
             }
             else
             {
                 p = 0;
+                txtTransferPrice.Background = Brushes.Red;
+                lbStatusBar.Content = "Pelaajan Siirtohinta ei saa sisältää muuta kuin numeroita ja pilkun!";
             }
-            seura.AddPlayer(f, l, seura.SeuraNimi, p);
 
-            lbStatusBar.Content = "Pelaaja '" +f +" " +l +", " +seura.SeuraNimi +"' lisätty!";
-            UpdateListView();
+            
         }
 
         private void btnRemovePlayer_Click(object sender, RoutedEventArgs e)
@@ -204,15 +226,24 @@ namespace Tehtava3_SM_liiga
             {
                 // is value
                 txtTransferPrice.Background = Brushes.White;
+
+                seura.UpdatePlayer(GetSelectedPlayer(), f, l, seura.SeuraNimi, p);
+
+                lbStatusBar.Content = "Pelaaja '" + f + " " + l + ", " + seura.SeuraNimi + "' päivitetty!";
+                UpdateListView();
             }
             else
             {
                 p = 0;
+                txtTransferPrice.Background = Brushes.Red;
+                lbStatusBar.Content = "Pelaajan Siirtohinta ei saa sisältää muuta kuin numeroita ja pilkun!";
             }
-            seura.UpdatePlayer(GetSelectedPlayer(), f, l, seura.SeuraNimi, p);
+            
+        }
 
-            lbStatusBar.Content = "Pelaaja '" + f + " " + l + ", " + seura.SeuraNimi + "' päivitetty!";
-            UpdateListView();
+        private void btnWritePlayers_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Toimintoa ei vielä tueta!");
         }
     }
 }
