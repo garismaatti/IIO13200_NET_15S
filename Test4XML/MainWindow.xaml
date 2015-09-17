@@ -5,19 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Test4XML"
         mc:Ignorable="d"
-        Title="Viinikellari" Height="300" Width="300">
+        Title="Viinikellari" Height="397.66" Width="483.189">
     <Grid>
         <Grid.Resources>
             <XmlDataProvider x:Key="viinidataa" Source="D://K2362/IIO13200_NET_15S/Test4XML/Viinit1.xml" XPath="viinikellari/wine">
             </XmlDataProvider>
         </Grid.Resources>
-        <DataGrid x:Name="dgWines" DataContext="{StaticResource viinidataa}" ItemsSource="{Binding}" AutoGenerateColumns="False">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="Red" Offset="0.33"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <DataGrid x:Name="dgWines" DataContext="{StaticResource viinidataa}" ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="10,64,10,37">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Viini" Binding="{Binding XPath=nimi}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Maa" Binding="{Binding XPath=maa}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Pisteet" Binding="{Binding XPath=arvio}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        
+        <Button x:Name="btnGetWine" Content="Hae viinit" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" Width="172" Click="btnGetWine_Click"/>
+        <ComboBox x:Name="cbFiltter" HorizontalAlignment="Left" Margin="203,22,0,0" VerticalAlignment="Top" Width="133" SelectionChanged="cbFiltter_SelectionChanged"/>
+        <Label x:Name="lbInfo" Content="Label" HorizontalAlignment="Left" Margin="10,336,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FFFFDC00" Width="455"/>
+
     </Grid>
 </Window>
