@@ -1,0 +1,23 @@
+﻿<Window x:Class="Test4XML.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test4XML"
+        mc:Ignorable="d"
+        Title="Viinikellari" Height="300" Width="300">
+    <Grid>
+        <Grid.Resources>
+            <XmlDataProvider x:Key="viinidataa" Source="D://K2362/IIO13200_NET_15S/Test4XML/Viinit1.xml" XPath="viinikellari/wine">
+            </XmlDataProvider>
+        </Grid.Resources>
+        <DataGrid x:Name="dgWines" DataContext="{StaticResource viinidataa}" ItemsSource="{Binding}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Viini" Binding="{Binding XPath=nimi}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Maa" Binding="{Binding XPath=maa}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Pisteet" Binding="{Binding XPath=arvio}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+    </Grid>
+</Window>
