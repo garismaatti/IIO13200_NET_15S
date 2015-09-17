@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Tehtava3_SM_liiga
 {
@@ -23,7 +24,8 @@ namespace Tehtava3_SM_liiga
         public MainWindow()
         {
             InitializeComponent();
-            AddMockupData();    //add mockup data
+            //AddMockupData();    //add mockup data
+            ReadFromFile();
             UpdateTeamList();   // update team list
             UpdateListView();   // update Player list
             cbTeam.SelectedIndex = 0; //select first item
@@ -32,6 +34,7 @@ namespace Tehtava3_SM_liiga
 
 
         private List<Seura> NHL = new List<Seura>();
+        private string fileName = "database.csv";
 
         private void AddMockupData()
         {
@@ -94,18 +97,17 @@ namespace Tehtava3_SM_liiga
             lstPelaajat.Items.Clear();
 
             int i = GetSelectedTeam();
-            //for (int i=0; i < NHL.Count(); i++) //For every Seura
-            // {
-            seura = NHL.ElementAt(i);
-            //cbTeam.Items.Add(seura.SeuraNimi);  //Add Seura
+            if (NHL.Count > 0) { 
+                seura = NHL.ElementAt(i);
+                //cbTeam.Items.Add(seura.SeuraNimi);  //Add Seura
 
-            players = seura.GetPlayers();
-            for (int j = 0; j < players.Count(); j++) //For every player in players list in Seura
-            {
-                player = players.ElementAt(j);
-                lstPelaajat.Items.Add(player.KokoNimi); //Add player to list
+                players = seura.GetPlayers();
+                for (int j = 0; j < players.Count(); j++) //For every player in players list in Seura
+                {
+                    player = players.ElementAt(j);
+                    lstPelaajat.Items.Add(player.KokoNimi); //Add player to list
+                }
             }
-            // }
 
         }
 
@@ -173,32 +175,36 @@ namespace Tehtava3_SM_liiga
         {
 
             Seura seura = new Seura();
-            seura = NHL.ElementAt(GetSelectedTeam());
-            string f = txtFirstName.Text;
-            string l = txtLastName.Text;
-            float p = 0;
-            if (float.TryParse(txtTransferPrice.Text, out p))
+            if (NHL.Count > GetSelectedTeam())
             {
-                // is value
-                txtTransferPrice.Background = Brushes.White;
-
-                if (seura.AddPlayer(f, l, seura.SeuraNimi, p))
+                seura = NHL.ElementAt(GetSelectedTeam());
+                string f = txtFirstName.Text;
+                string l = txtLastName.Text;
+                float p = 0;
+                if (float.TryParse(txtTransferPrice.Text, out p))
                 {
-                    lbStatusBar.Content = "Pelaajaa ei lisätty! Pelaaja '" + f + " " + l + ", " + seura.SeuraNimi + "' on jo tietokannassa!";
+                    // is value
+                    txtTransferPrice.Background = Brushes.White;
+
+                    if (seura.AddPlayer(f, l, seura.SeuraNimi, p))
+                    {
+                        lbStatusBar.Content = "Pelaajaa ei lisätty! Pelaaja '" + f + " " + l + ", " + seura.SeuraNimi + "' on jo tietokannassa!";
+                    }
+                    else
+                    {
+                        lbStatusBar.Content = "Pelaaja '" + f + " " + l + ", " + seura.SeuraNimi + "' lisätty!";
+                    }
+                    UpdateListView();
+                    lstPelaajat.SelectedIndex = lstPelaajat.Items.Count - 1;
                 }
                 else
                 {
-                    lbStatusBar.Content = "Pelaaja '" + f + " " + l + ", " + seura.SeuraNimi + "' lisätty!";
+                    p = 0;
+                    txtTransferPrice.Background = Brushes.Red;
+                    lbStatusBar.Content = "Pelaajan Siirtohinta ei saa sisältää muuta kuin numeroita ja pilkun!";
                 }
-                UpdateListView();
-                lstPelaajat.SelectedIndex = lstPelaajat.Items.Count - 1;
             }
-            else
-            {
-                p = 0;
-                txtTransferPrice.Background = Brushes.Red;
-                lbStatusBar.Content = "Pelaajan Siirtohinta ei saa sisältää muuta kuin numeroita ja pilkun!";
-            }
+
 
             
         }
@@ -206,10 +212,13 @@ namespace Tehtava3_SM_liiga
         private void btnRemovePlayer_Click(object sender, RoutedEventArgs e)
         {
             Seura seura = new Seura();
-            seura = NHL.ElementAt(GetSelectedTeam());
-            string name = seura.GetPlayers().ElementAt(GetSelectedPlayer()).KokoNimi;
-            lbStatusBar.Content = "Pelaaja '" +name +"' poistettu!";
-            seura.RemovePlayer(GetSelectedPlayer());
+            if (NHL.Count > GetSelectedTeam())
+            {
+                seura = NHL.ElementAt(GetSelectedTeam());
+                string name = seura.GetPlayers().ElementAt(GetSelectedPlayer()).KokoNimi;
+                lbStatusBar.Content = "Pelaaja '" + name + "' poistettu!";
+                seura.RemovePlayer(GetSelectedPlayer());
+            }
             UpdateListView();
         }
 
@@ -217,33 +226,130 @@ namespace Tehtava3_SM_liiga
         {
 
             Seura seura = new Seura();
-            seura = NHL.ElementAt(GetSelectedTeam());
-
-            string f = txtFirstName.Text;
-            string l = txtLastName.Text;
-            float p = 0;
-            if (float.TryParse(txtTransferPrice.Text, out p))
+            if (NHL.Count > GetSelectedTeam())
             {
-                // is value
-                txtTransferPrice.Background = Brushes.White;
+                seura = NHL.ElementAt(GetSelectedTeam());
 
-                seura.UpdatePlayer(GetSelectedPlayer(), f, l, seura.SeuraNimi, p);
+                string f = txtFirstName.Text;
+                string l = txtLastName.Text;
+                float p = 0;
+                if (float.TryParse(txtTransferPrice.Text, out p))
+                {
+                    // is value
+                    txtTransferPrice.Background = Brushes.White;
 
-                lbStatusBar.Content = "Pelaaja '" + f + " " + l + ", " + seura.SeuraNimi + "' päivitetty!";
-                UpdateListView();
-            }
-            else
-            {
-                p = 0;
-                txtTransferPrice.Background = Brushes.Red;
-                lbStatusBar.Content = "Pelaajan Siirtohinta ei saa sisältää muuta kuin numeroita ja pilkun!";
+                    seura.UpdatePlayer(GetSelectedPlayer(), f, l, seura.SeuraNimi, p);
+
+                    lbStatusBar.Content = "Pelaaja '" + f + " " + l + ", " + seura.SeuraNimi + "' päivitetty!";
+                    UpdateListView();
+                }
+                else
+                {
+                    p = 0;
+                    txtTransferPrice.Background = Brushes.Red;
+                    lbStatusBar.Content = "Pelaajan Siirtohinta ei saa sisältää muuta kuin numeroita ja pilkun!";
+                }
             }
             
         }
 
         private void btnWritePlayers_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Toimintoa ei vielä tueta!");
+            WriteToFile();
+            //MessageBox.Show("Tiedosto tallennettu!");
+            lbStatusBar.Content = "Pelaajat tallennettu tiedostoon '" +fileName +"'!";
+            //ReadFromFile();
+        }
+
+
+        private void ReadFromFile()
+        {
+            Seura seura = new Seura();
+            List<string> seuroja = new List<string>();
+            bool foundSeura = false;
+
+            // Read in every line in specified file.
+            // ... This will store all lines in an array in memory.
+            string[] lines = File.ReadAllLines(fileName);
+            foreach (string line in lines)
+            {
+                // Do something with the line.
+                string[] row = line.Split(';');
+                //MessageBox.Show(row[0].ToString());
+
+
+                foundSeura = false; //reset value
+                for (int i = 0; i < NHL.Count(); i++) //For every Seura
+                {
+                    seura = NHL.ElementAt(i);
+                    if (seura.SeuraNimi == row[2])  //seura exits
+                    {
+                        float p = 0; //value
+                        if (float.TryParse(row[3], out p))  //try parse value
+                        {
+
+                        }
+                        seura.AddPlayer(row[0], row[1], row[2], p);
+                        foundSeura = true;
+                    }
+                }
+
+                if (!foundSeura && row[2]!="Seura")
+                {
+                    //Seura does not yet exist
+                    //MessageBox.Show("Not found " +row[2]);
+                    seura = new Seura();
+                    seura.SeuraNimi = row[2];
+
+                    float p = 0; //value
+                    if (float.TryParse(row[3], out p))  //try parse value
+                    {
+
+                    }
+                    seura.AddPlayer(row[0], row[1], row[2], p);
+                    NHL.Add(seura); //Add seura
+                }
+            }
+            UpdateTeamList();
+        }
+
+
+        private void WriteToFile()
+        {
+            
+            string strRow = "";
+
+            File.WriteAllText(fileName, "Etunimi;Sukunimi;Seura;Siirtohinta\n");
+           
+
+            List<Pelaaja> players = new List<Pelaaja>();
+            Pelaaja player = new Pelaaja();
+            Seura seura = new Seura();
+
+            //int i = GetSelectedTeam();
+            for (int i = 0; i < NHL.Count(); i++) //For every Seura
+            {
+
+
+                seura = NHL.ElementAt(i);
+                players = seura.GetPlayers();
+
+                for (int j = 0; j < players.Count(); j++) //For every player in players list in Seura
+                {
+                    player = players.ElementAt(j);
+                    strRow = player.Etunimi;
+                    strRow += ";"; 
+                    strRow += player.Sukunimi;
+                    strRow += ";";
+                    strRow += player.Seura;
+                    strRow += ";";
+                    strRow += player.Siirtohinta;
+                    strRow += "\n";
+                    File.AppendAllText(fileName, strRow);
+                }
+
+            }
+            
         }
     }
 }
