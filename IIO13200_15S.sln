@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test4XML", "Test4XML\Test4X
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADDDataReader2", "ADDDataReader2\ADDDataReader2.csproj", "{96F91ABC-30F3-41F4-AEC4-CC71378620FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teht5 - ViiniKellari", "ViiniKellari\Teht5 - ViiniKellari.csproj", "{71FCD86D-F17C-4C89-A5A3-4D7CD6EC94D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADODataReader", "ADODataReader\ADODataReader.csproj", "{629F2915-0837-41FB-AF62-BEB76E79EABE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{96F91ABC-30F3-41F4-AEC4-CC71378620FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96F91ABC-30F3-41F4-AEC4-CC71378620FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96F91ABC-30F3-41F4-AEC4-CC71378620FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71FCD86D-F17C-4C89-A5A3-4D7CD6EC94D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71FCD86D-F17C-4C89-A5A3-4D7CD6EC94D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71FCD86D-F17C-4C89-A5A3-4D7CD6EC94D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71FCD86D-F17C-4C89-A5A3-4D7CD6EC94D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{629F2915-0837-41FB-AF62-BEB76E79EABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{629F2915-0837-41FB-AF62-BEB76E79EABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{629F2915-0837-41FB-AF62-BEB76E79EABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{629F2915-0837-41FB-AF62-BEB76E79EABE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
