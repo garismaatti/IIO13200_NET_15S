@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teht4 - ViiniKellari", "Vii
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADODataReader", "ADODataReader\ADODataReader.csproj", "{629F2915-0837-41FB-AF62-BEB76E79EABE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teht5-Lasnaolot", "Teht5-Lasnaolot\Teht5-Lasnaolot.csproj", "{3865603C-6B39-42A5-AD65-EDD09F715F94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{629F2915-0837-41FB-AF62-BEB76E79EABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{629F2915-0837-41FB-AF62-BEB76E79EABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{629F2915-0837-41FB-AF62-BEB76E79EABE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3865603C-6B39-42A5-AD65-EDD09F715F94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3865603C-6B39-42A5-AD65-EDD09F715F94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3865603C-6B39-42A5-AD65-EDD09F715F94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3865603C-6B39-42A5-AD65-EDD09F715F94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

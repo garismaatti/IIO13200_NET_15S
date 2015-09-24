@@ -1,0 +1,18 @@
+﻿<Window x:Class="Teht5_Lasnaolot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Teht5_Lasnaolot"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Label x:Name="lb_txt" Content="Tunnus:" HorizontalAlignment="Left" Margin="188,15,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btn_DataTable" Content="Hae läsnäolot (DataTable)" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="166" Click="btn_DataTable_Click"/>
+        <Button x:Name="btn_DataView" Content="Hae läsnäolot (DataView)" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Width="166" Click="btn_DataView_Click" IsEnabled="False"/>
+        <Button x:Name="btn_DataSet" Content="Hae läsnäolot (DataSet)" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="166" Click="btn_DataSet_Click" IsEnabled="False"/>
+        <TextBox x:Name="txt_asioid" HorizontalAlignment="Left" Height="22" Margin="191,37,0,0" TextWrapping="Wrap" Text="k2362" VerticalAlignment="Top" Width="120"/>
+        <DataGrid x:Name="dgData" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Height="219" Width="497"/>
+
+    </Grid>
+</Window>
