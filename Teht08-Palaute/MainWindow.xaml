@@ -1,0 +1,32 @@
+﻿<Window x:Class="Teht08_Palaute.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Teht08_Palaute"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="540.459" Width="689.385">
+    <Grid HorizontalAlignment="Left" Width="679">
+        <Grid.DataContext>
+            <XmlDataProvider x:Name="TeamData" Source="Teams.xml" XPath="Teams/Team" />
+        </Grid.DataContext>
+        <TextBox x:Name="txtDate" HorizontalAlignment="Left" Height="23" Margin="220,36,0,0" TextWrapping="Wrap" Text="PVM" VerticalAlignment="Top" Width="171"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="15,36,0,0" TextWrapping="Wrap" Text="Kurssin Nimi" VerticalAlignment="Top" Width="171"/>
+        <TextBox x:Name="txtFuture" HorizontalAlignment="Left" Height="44" Margin="220,95,0,0" TextWrapping="Wrap" Text="Tavoitteet" VerticalAlignment="Top" Width="171"/>
+        <TextBox x:Name="txtLearn" HorizontalAlignment="Left" Height="44" Margin="220,179,0,0" TextWrapping="Wrap" Text="Oppinut" VerticalAlignment="Top" Width="171"/>
+        <TextBox x:Name="txtGood" HorizontalAlignment="Left" Height="44" Margin="15,95,0,0" TextWrapping="Wrap" Text="Hyvää" VerticalAlignment="Top" Width="171"/>
+        <TextBox x:Name="txtBad" HorizontalAlignment="Left" Height="47" Margin="15,176,0,0" TextWrapping="Wrap" Text="Huonoa" VerticalAlignment="Top" Width="171"/>
+        <TextBox x:Name="txtElse" HorizontalAlignment="Left" Height="44" Margin="431,95,0,0" TextWrapping="Wrap" Text="Muuta" VerticalAlignment="Top" Width="171"/>
+        <Button x:Name="btnSend" Content="Lähetä" HorizontalAlignment="Left" Margin="431,201,0,0" VerticalAlignment="Top" Width="75" Click="btnSend_Click"/>
+        <Label x:Name="lbName" Content="Kurssin nimi:" HorizontalAlignment="Left" Margin="15,10,0,0" VerticalAlignment="Top" Width="171"/>
+        <Label x:Name="lbFuture" Content="Tavoitteet" HorizontalAlignment="Left" Margin="220,72,0,0" VerticalAlignment="Top" Width="171"/>
+        <Label x:Name="lbGood" Content="Hyvää:" HorizontalAlignment="Left" Margin="15,69,0,0" VerticalAlignment="Top" Width="171"/>
+        <Label x:Name="lbElse" Content="Muuta:" HorizontalAlignment="Left" Margin="431,72,0,0" VerticalAlignment="Top" Width="171"/>
+        <Label x:Name="lbDate" Content="Päivämäärä:" HorizontalAlignment="Left" Margin="220,10,0,0" VerticalAlignment="Top" Width="171"/>
+        <Label x:Name="lbLearn" Content="Oppinut:" HorizontalAlignment="Left" Margin="220,153,0,0" VerticalAlignment="Top" Width="171"/>
+        <Label x:Name="lbBad" Content="Huonoa:" HorizontalAlignment="Left" Margin="15,150,0,0" VerticalAlignment="Top" Width="171"/>
+        <DataGrid x:Name="dgList" HorizontalAlignment="Left" Margin="10,239,0,0" VerticalAlignment="Top" Width="659" Height="261"/>
+        <Button x:Name="btnRead" Content="Lue" HorizontalAlignment="Left" Margin="527,201,0,0" VerticalAlignment="Top" Width="75" Click="btnRead_Click"/>
+
+    </Grid>
+</Window>

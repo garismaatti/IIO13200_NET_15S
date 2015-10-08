@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Teht08_Palaute.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PalauteXML" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://student.labranet.jamk.fi/~salesa/iio13200/Palautteet.xml</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
