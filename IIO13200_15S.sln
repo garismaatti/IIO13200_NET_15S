@@ -29,6 +29,29 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestForTeht2", "UnitTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teht08-Palaute", "Teht08-Palaute\Teht08-Palaute.csproj", "{DFECA4D9-3763-4C4E-8A16-23C29010C13E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tehtava07-junaaikataulut", "tehtava07-junaaikataulut\tehtava07-junaaikataulut.csproj", "{FE30AC3D-B54B-4102-856A-773BD6D7F128}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ASP.NET Demo(1)", "ASP.NET Demo\", "{D9645549-FD44-4436-9696-81A9BCB9C5CB}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_6942"
+		Debug.AspNetCompiler.PhysicalPath = "ASP.NET Demo\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_6942\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_6942"
+		Release.AspNetCompiler.PhysicalPath = "ASP.NET Demo\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_6942\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "6942"
+		SlnRelativePath = "ASP.NET Demo\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +110,14 @@ Global
 		{DFECA4D9-3763-4C4E-8A16-23C29010C13E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFECA4D9-3763-4C4E-8A16-23C29010C13E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFECA4D9-3763-4C4E-8A16-23C29010C13E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE30AC3D-B54B-4102-856A-773BD6D7F128}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE30AC3D-B54B-4102-856A-773BD6D7F128}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE30AC3D-B54B-4102-856A-773BD6D7F128}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE30AC3D-B54B-4102-856A-773BD6D7F128}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9645549-FD44-4436-9696-81A9BCB9C5CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9645549-FD44-4436-9696-81A9BCB9C5CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9645549-FD44-4436-9696-81A9BCB9C5CB}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9645549-FD44-4436-9696-81A9BCB9C5CB}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
