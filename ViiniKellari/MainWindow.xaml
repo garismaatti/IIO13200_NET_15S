@@ -17,8 +17,8 @@
                 <GradientStop Color="Red" Offset="0.33"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Button x:Name="btnGetWine" Content="Hae viinit" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" Width="172" Click="btnGetWine_Click"/>
-        <ComboBox x:Name="cbFiltter" HorizontalAlignment="Left" Margin="203,22,0,0" VerticalAlignment="Top" Width="133" SelectionChanged="cbFiltter_SelectionChanged"/>
+        <Button x:Name="btnGetWine" Content="Hae viinit" HorizontalAlignment="Left" Margin="148,22,0,0" VerticalAlignment="Top" Width="172" Click="btnGetWine_Click"/>
+        <ComboBox x:Name="cbFiltter" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" Width="133" SelectionChanged="cbFiltter_SelectionChanged"/>
         <Label x:Name="lbInfo" Content="Label" HorizontalAlignment="Left" Margin="10,336,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FFFFDC00" Width="455"/>
         <DataGrid x:Name="dgWines" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Height="258" Width="455"/>
 

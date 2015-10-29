@@ -1,20 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Xml;
-using System.Xml.Linq;
 
 namespace ViiniKellari
 {
@@ -31,7 +20,10 @@ namespace ViiniKellari
 
         // CHANGE TO SELECT XML FILE
         //private string fileUrl = "http://student.labranet.jamk.fi/~salesa/iio11300/mat/Viinit1.xml";
-        private string fileUrl = "D://K2362/IIO13200_NET_15S/Test4XML/Viinit1.xml";
+        //private string fileUrl = "D://K2362/IIO13200_NET_15S/Test4XML/Viinit1.xml";
+        //private string fileUrl = ConfigurationSettings.AppSettings["ViinitTiedosto"];
+        private string fileUrl = ConfigurationManager.AppSettings["ViinitTiedosto"] ?? "Not Found";
+
 
         private void InitFields()
         {
