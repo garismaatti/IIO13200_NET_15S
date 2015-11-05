@@ -5,10 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tehtava07_junaaikataulut"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="459.62" Width="525">
     <Grid>
-        <DataGrid x:Name="dgData" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Height="265" Width="497" ItemsSource="{Binding}"/>
+        <DataGrid x:Name="dgData" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Height="337" Width="497" ItemsSource="{Binding}"/>
         <Button x:Name="btnGetTimes" Content="Hae aikataulut" HorizontalAlignment="Left" Margin="266,10,0,0" VerticalAlignment="Top" Width="193" Click="btnGetTimes_Click"/>
+        <ComboBox x:Name="cbStations" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="186"/>
+        <Label x:Name="lbStatus" Content="Status" HorizontalAlignment="Left" Margin="10,387,0,0" VerticalAlignment="Top" Width="497"/>
 
     </Grid>
 </Window>

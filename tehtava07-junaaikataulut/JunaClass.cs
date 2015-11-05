@@ -10,9 +10,8 @@ namespace tehtava07_junaaikataulut
 {
     class JunaClass
     {
-        // {"passengerTraffic":true,"type":"STATION","stationName":"Jyväskylä","stationShortCode":"JY","stationUICCode":240,"countryCode":"FI","longitude":25.75498431951706,"latitude":62.24145541884135}
         // {"stationShortCode":"ML","stationUICCode":17,"countryCode":"FI","type":"DEPARTURE","trainStopping":false,"cancelled":false,"scheduledTime":"2015-10-22T04:17:00.000Z","actualTime":"2015-10-22T04:23:57.000Z","differenceInMinutes":7},
-        //HUOM jos attribuutin ja propertyn nimet ovat eir niin käytä seuraavaa
+        //HUOM jos attribuutin ja propertyn nimet ovat eriävät niin käytä seuraavaa
         [JsonProperty("trainNumber")]
         public int trainNum { get; set; }
         [JsonProperty("operatorUICCode")]
@@ -44,6 +43,30 @@ namespace tehtava07_junaaikataulut
         public string actualTime { get; set; }
         public int differenceInMinutes { get; set; }
         */
+    }
+
+
+    class StationsClass
+    {
+        // {"passengerTraffic":false,"type":"STATION","stationName":"Alapitkä","stationShortCode":"APT","stationUICCode":415,"countryCode":"FI","longitude":27.53542621509808,"latitude":63.20082319557591},
+
+        //HUOM jos attribuutin ja propertyn nimet ovat eriävät niin käytä seuraavaa
+        [JsonProperty("stationName")]
+        public string name { get; set; }
+        [JsonProperty("stationShortCode")]
+        public string shortCode { get; set; }
+
+        /* Items in JSON
+
+                    "passengerTraffic":false,
+                    "type":"STATION",
+                    "stationName":"Alapitkä",
+                    "stationShortCode":"APT",
+                    "stationUICCode":415,
+                    "countryCode":"FI",
+                    "longitude":27.53542621509808,
+                    "latitude":63.20082319557591
+                */
     }
 
 }
